@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>PyScriptテスト(外部ライブラリの利用)</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- 外部ライブラリはpy-env内で記載する -->
+    <py-env>
+      - pandas
+      - matplotlib
+    </py-env>
+  </head>
+  <body>
+    <div id="plot"></div>
+    <py-script>
+import pandas as pd
+pd.DataFrame({'年齢':[19, 33, 41]})
+
+
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+ax.plot([10, 11, 12], [100, 90, 98])
+pyscript.write('plot', fig)
+    </py-script>
+  </body>
+</html>
