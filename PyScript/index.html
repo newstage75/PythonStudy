@@ -7,14 +7,19 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   </head>
   <body>
+    <div id="python_output" style="background-color:lightblue"></div>
     <py-script>
 print('初めてのPySctipt!')
-
 def func1(n):
     print(f'{n}:func1の実行{n}回目')
 
 for x in range(3):
     func1(x)
+
+"""標準ライブラリの利用"""
+import sys
+
+pyscript.write('python_output', sys.version_info)
     </py-script>
   </body>
 </html>
