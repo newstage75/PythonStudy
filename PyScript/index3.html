@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>PyScriptテスト(自作のpythonモジュールをインポート)</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+      - paths:
+        - /my_module.py
+    </py-env>
+  </head>
+  <body>
+    <py-script>
+import my_module
+
+print(func1(23))
+print('普通のprint')
+    </py-script>
+  </body>
+</html>
